@@ -6,8 +6,8 @@ services:
     container_name: n8n_postgres
     restart: always
     environment:
-      POSTGRES_USER: ceapalaciosal
-      POSTGRES_PASSWORD: c3s4r_p4l4c10s
+      POSTGRES_USER: <user>
+      POSTGRES_PASSWORD: <password>
       POSTGRES_DB: n8n
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
@@ -23,8 +23,8 @@ services:
       - DB_POSTGRESDB_HOST=postgres
       - DB_POSTGRESDB_PORT=5432
       - DB_POSTGRESDB_DATABASE=n8n
-      - DB_POSTGRESDB_USER=ceapalaciosal
-      - DB_POSTGRESDB_PASSWORD=c3s4r_p4l4c10s
+      - DB_POSTGRESDB_USER=<user>
+      - DB_POSTGRESDB_PASSWORD=<password>
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=admin123
