@@ -46,11 +46,10 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
-      # URLs dinámicas - se actualizan según el método usado
-      - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678}
-      - N8N_EDITOR_BASE_URL=${N8N_EDITOR_BASE_URL:-http://localhost:5678}
-      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
-      - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE:-false}
+      - WEBHOOK_URL=http://localhost:5678
+      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - N8N_PROTOCOL=http
+      - N8N_SECURE_COOKIE=false
       - NODE_ENV=production
       - N8N_METRICS=true
       - TZ=America/Bogota
@@ -60,40 +59,6 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
 
-  # Nginx proxy (opcional - usar con --profile nginx)
-  nginx:
-    image: nginx:alpine
-    container_name: n8n_nginx
-    restart: always
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - nginx_logs:/var/log/nginx
-    depends_on:
-      - n8n
-    profiles:
-      - nginx
-
-  # Ngrok tunnel (opcional - usar con --profile ngrok)
-  ngrok:
-    image: ngrok/ngrok:latest
-    container_name: n8n_ngrok
-    restart: always
-    ports:
-      - "4040:4040"
-    environment:
-      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
-    command: 
-      - "tunnel"
-      - "http"
-      - "n8n:5678"
-    depends_on:
-      - n8n
-    profiles:
-      - ngrok
-
 volumes:
   n8n_data:
   postgres_data:
-  nginx_logs:
