@@ -49,6 +49,7 @@ services:
       - WEBHOOK_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
       - N8N_EDITOR_BASE_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
       - N8N_PROTOCOL=http
+      - N8N_SECURE_COOKIE=false
       - NODE_ENV=production
       - N8N_METRICS=true
       - TZ=America/Bogota
