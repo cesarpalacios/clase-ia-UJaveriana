@@ -24,8 +24,14 @@ services:
       POSTGRES_USER: n8nuser
       POSTGRES_PASSWORD: n8npassword
       POSTGRES_DB: n8n
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C --lc-ctype=C"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8nuser -d n8n"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   n8n:
     image: docker.n8n.io/n8nio/n8n
@@ -46,16 +52,19 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
-      - WEBHOOK_URL=http://localhost:5678
-      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - WEBHOOK_URL=${NGROK_URL:-http://localhost:5678}
+      - N8N_EDITOR_BASE_URL=${NGROK_URL:-http://localhost:5678}
       - N8N_PROTOCOL=http
       - N8N_SECURE_COOKIE=false
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - NODE_ENV=production
       - N8N_METRICS=true
       - TZ=America/Bogota
     depends_on:
-      - postgres
-      - n8n-init
+      postgres:
+        condition: service_healthy
+      n8n-init:
+        condition: service_completed_successfully
     volumes:
       - n8n_data:/home/node/.n8n
 
