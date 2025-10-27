@@ -1,4 +1,4 @@
-# Configuración de n8n con Docker Labs y Nginx Proxy
+# Configuración de n8n con Docker Labs y Nginx Proxy (HTTP)
 
 ## Arquitectura
 
@@ -8,12 +8,12 @@ Internet → Docker Labs → Nginx (Puerto 80) → n8n (Puerto 5678) → Postgre
 
 ## Ventajas del Nginx Proxy
 
-- ✅ **Puerto estándar**: Usa puerto 80 (más fácil acceso)
+- ✅ **Puerto estándar**: Usa puerto 80 
 - ✅ **Mejor rendimiento**: Nginx maneja conexiones estáticas
 - ✅ **WebSocket support**: Funciona mejor con n8n
 - ✅ **Logs separados**: Mejor debugging
 - ✅ **Cache**: Archivos estáticos se cachean
-- ✅ **Flexibilidad**: Fácil agregar SSL, rate limiting, etc.
+- ✅ **Flexibilidad**: Fácil configurar y mantener
 
 ## Archivos de configuración
 
@@ -21,9 +21,9 @@ Internet → Docker Labs → Nginx (Puerto 80) → n8n (Puerto 5678) → Postgre
 2. **nginx.conf**: Configuración del proxy reverso
 3. **n8n-manager.sh**: Script de manejo simplificado
 
-## URL actualizada para Docker Labs
+## URL para Docker Labs
 
-Tu nueva URL será:
+Tu URL será:
 ```
 http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
 ```
@@ -51,6 +51,15 @@ http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
 ```bash
 ./n8n-manager.sh stop
 ```
+
+## Para Gmail OAuth2
+
+Usar esta URL de callback:
+```
+http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com/rest/oauth2-credential/callback
+```
+
+**Nota**: Gmail en producción prefiere HTTPS, pero para desarrollo y testing HTTP funciona.
 
 ### 4. Configuración para Gmail
 

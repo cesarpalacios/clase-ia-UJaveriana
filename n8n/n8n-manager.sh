@@ -3,8 +3,7 @@
 # Script para manejar n8n con nginx proxy
 # Uso: ./n8n-manager.sh [start|stop|restart|logs|status]
 
-DOCKER_LABS_URL="ip172-18-0-18-d3vc6lgl2o9000bn4hdg-443.direct.labs.play-with-docker.com"
-DOCKER_LABS_URL_HTTP="ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com"
+DOCKER_LABS_URL="ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com"
 
 case "$1" in
     start)
@@ -25,16 +24,12 @@ case "$1" in
         docker-compose up -d
         
         echo "✅ Servicios iniciados!"
-        echo "📍 n8n disponible en: https://$DOCKER_LABS_URL"
-        echo "� Alternativo (HTTP): http://$DOCKER_LABS_URL_HTTP"
-        echo "�👤 Usuario: admin"
+        echo "📍 n8n disponible en: http://$DOCKER_LABS_URL"
+        echo " Usuario: admin"
         echo "🔑 Contraseña: admin123"
         echo ""
         echo "🔧 Para configurar Gmail OAuth2, usa esta URL de callback:"
-        echo "   https://$DOCKER_LABS_URL/rest/oauth2-credential/callback"
-        echo ""
-        echo "🔐 Para configurar SSL, ejecuta:"
-        echo "   ./ssl-setup.sh init"
+        echo "   http://$DOCKER_LABS_URL/rest/oauth2-credential/callback"
         ;;
         
     stop)
@@ -64,24 +59,8 @@ case "$1" in
         docker-compose ps
         echo ""
         echo "🌐 URLs importantes:"
-        echo "   n8n HTTPS: https://$DOCKER_LABS_URL"
-        echo "   n8n HTTP: http://$DOCKER_LABS_URL_HTTP"
-        echo "   Callback OAuth2: https://$DOCKER_LABS_URL/rest/oauth2-credential/callback"
-        ;;
-        
-    ssl-init)
-        echo "🔐 Configurando SSL automáticamente..."
-        ./ssl-setup.sh init
-        ;;
-        
-    ssl-prod)
-        echo "🔐 Obteniendo certificado de producción..."
-        ./ssl-setup.sh prod
-        ;;
-        
-    ssl-status)
-        echo "📊 Estado SSL..."
-        ./ssl-setup.sh status
+        echo "   n8n: http://$DOCKER_LABS_URL"
+        echo "   Callback OAuth2: http://$DOCKER_LABS_URL/rest/oauth2-credential/callback"
         ;;
         
     nginx-reload)
@@ -134,8 +113,8 @@ case "$1" in
         ;;
         
     *)
-        echo "🛠️  Script de manejo de n8n con nginx y SSL"
-        echo "Uso: $0 {start|stop|restart|logs|status|nginx-reload|backup|fix-permissions|clean|ssl-init|ssl-prod|ssl-status}"
+        echo "🛠️  Script de manejo de n8n con nginx"
+        echo "Uso: $0 {start|stop|restart|logs|status|nginx-reload|backup|fix-permissions|clean}"
         echo ""
         echo "Comandos básicos:"
         echo "  start            - Iniciar todos los servicios"
@@ -150,20 +129,12 @@ case "$1" in
         echo "  fix-permissions  - Arreglar permisos de n8n"
         echo "  clean            - Limpiar todos los datos (¡PELIGROSO!)"
         echo ""
-        echo "Comandos SSL:"
-        echo "  ssl-init         - Configurar SSL inicial (staging)"
-        echo "  ssl-prod         - Obtener certificado de producción"
-        echo "  ssl-status       - Ver estado de certificados SSL"
-        echo ""
-        echo "📋 Flujo completo recomendado:"
-        echo "  1. $0 start"
-        echo "  2. $0 ssl-init"
-        echo "  3. $0 ssl-prod"
-        echo "  4. $0 restart"
+        echo "📋 Flujo básico:"
+        echo "  1. $0 start      - Iniciar todo"
+        echo "  2. Acceder a: http://$DOCKER_LABS_URL"
         echo ""
         echo "Ejemplos:"
         echo "  $0 start"
-        echo "  $0 ssl-init"
         echo "  $0 logs nginx"
         exit 1
         ;;
