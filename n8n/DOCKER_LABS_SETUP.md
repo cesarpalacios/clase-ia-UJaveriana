@@ -1,25 +1,55 @@
-# Configuración de n8n con Docker Labs para Gmail
+# Configuración de n8n con Docker Labs y Nginx Proxy
 
-## Pasos para obtener la URL pública de Docker Labs
+## Arquitectura
 
-### 1. Acceder a Docker Labs
-- Ve a [play.docker.com](https://play.docker.com)
-- Inicia sesión con tu cuenta de Docker Hub
-- Crea una nueva instancia
-
-### 2. Obtener la URL pública
-Cuando Docker Labs genere tu instancia, verás algo como:
 ```
-https://ip172-18-0-x-xxxxxxxxx-5678.direct.labs.play-with-docker.com
+Internet → Docker Labs → Nginx (Puerto 80) → n8n (Puerto 5678) → PostgreSQL
 ```
 
-### 3. Configurar tu docker-compose.yml
-Reemplaza `your-docker-labs-url.com` en el archivo `docker-compose.yml` con tu URL real de Docker Labs.
+## Ventajas del Nginx Proxy
 
-**Ejemplo:**
-```yaml
-- WEBHOOK_URL=https://ip172-18-0-x-xxxxxxxxx-5678.direct.labs.play-with-docker.com
-- N8N_EDITOR_BASE_URL=https://ip172-18-0-x-xxxxxxxxx-5678.direct.labs.play-with-docker.com
+- ✅ **Puerto estándar**: Usa puerto 80 (más fácil acceso)
+- ✅ **Mejor rendimiento**: Nginx maneja conexiones estáticas
+- ✅ **WebSocket support**: Funciona mejor con n8n
+- ✅ **Logs separados**: Mejor debugging
+- ✅ **Cache**: Archivos estáticos se cachean
+- ✅ **Flexibilidad**: Fácil agregar SSL, rate limiting, etc.
+
+## Archivos de configuración
+
+1. **docker-compose.yml**: Orquestación de servicios
+2. **nginx.conf**: Configuración del proxy reverso
+3. **n8n-manager.sh**: Script de manejo simplificado
+
+## URL actualizada para Docker Labs
+
+Tu nueva URL será:
+```
+http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
+```
+
+## Uso rápido
+
+### Iniciar todo:
+```bash
+./n8n-manager.sh start
+```
+
+### Ver estado:
+```bash
+./n8n-manager.sh status
+```
+
+### Ver logs:
+```bash
+./n8n-manager.sh logs
+./n8n-manager.sh logs nginx
+./n8n-manager.sh logs n8n
+```
+
+### Detener:
+```bash
+./n8n-manager.sh stop
 ```
 
 ### 4. Configuración para Gmail

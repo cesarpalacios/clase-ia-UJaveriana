@@ -16,8 +16,8 @@ services:
     image: docker.n8n.io/n8nio/n8n
     container_name: n8n
     restart: always
-    ports:
-      - "5678:5678"
+    expose:
+      - "5678"
     environment:
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=postgres
@@ -30,8 +30,8 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
-      - WEBHOOK_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-5678.direct.labs.play-with-docker.com/
-      - N8N_EDITOR_BASE_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-5678.direct.labs.play-with-docker.com/
+      - WEBHOOK_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
+      - N8N_EDITOR_BASE_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
       - N8N_PROTOCOL=http
       - NODE_ENV=production
       - N8N_METRICS=true
@@ -41,6 +41,25 @@ services:
     volumes:
       - ./n8n_data:/home/node/.n8n
 
+  nginx:
+    image: nginx:alpine
+    container_name: n8n_nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx_logs:/var/log/nginx
+    depends_on:
+      - n8n
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
+
 volumes:
   n8n_data:
   postgres_data:
+  nginx_logs:
