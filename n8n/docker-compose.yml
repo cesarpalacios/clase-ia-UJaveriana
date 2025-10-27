@@ -1,6 +1,21 @@
 version: '3.8'
 
 services:
+  # Servicio para preparar permisos
+  n8n-init:
+    image: busybox
+    container_name: n8n_init
+    command: >
+      sh -c "
+        mkdir -p /data &&
+        chown -R 1000:1000 /data &&
+        chmod -R 755 /data &&
+        echo 'Permisos configurados correctamente'
+      "
+    volumes:
+      - ./n8n_data:/data
+    restart: "no"
+
   postgres:
     image: postgres:15
     container_name: n8n_postgres
@@ -16,6 +31,7 @@ services:
     image: docker.n8n.io/n8nio/n8n
     container_name: n8n
     restart: always
+    user: "1000:1000"
     expose:
       - "5678"
     environment:
@@ -38,6 +54,7 @@ services:
       - TZ=America/Bogota
     depends_on:
       - postgres
+      - n8n-init
     volumes:
       - ./n8n_data:/home/node/.n8n
 
