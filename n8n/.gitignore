@@ -1,0 +1,12 @@
+# Directorios de datos que se crean automáticamente
+n8n_data/*
+!n8n_data/.gitkeep
+
+# Variables de entorno (si las usaras en el futuro)
+.env
+
+# Logs
+*.log
+
+# Backups
+backup_*
