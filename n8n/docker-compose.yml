@@ -46,10 +46,10 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=admin123
       - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
-      - WEBHOOK_URL=https://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-443.direct.labs.play-with-docker.com
-      - N8N_EDITOR_BASE_URL=https://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-443.direct.labs.play-with-docker.com
-      - N8N_PROTOCOL=https
-      - N8N_SECURE_COOKIE=true
+      - WEBHOOK_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
+      - N8N_EDITOR_BASE_URL=http://ip172-18-0-18-d3vc6lgl2o9000bn4hdg-80.direct.labs.play-with-docker.com
+      - N8N_PROTOCOL=http
+      - N8N_SECURE_COOKIE=false
       - NODE_ENV=production
       - N8N_METRICS=true
       - TZ=America/Bogota
