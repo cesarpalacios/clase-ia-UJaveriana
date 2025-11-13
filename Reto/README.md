@@ -108,14 +108,6 @@ graph LR
 | **7** | 🔐 **Detector de Riesgos en Logs** | ⭐⭐⭐⭐ | n8n + GitHub Models + Log Analysis | [Ver detalles →](./enunciados/07_detector_riesgos_logs.md) |
 | **8** | 🏢 **Mini CRM Inteligente** | ⭐⭐⭐ | n8n + GitHub Models + Database | [Ver detalles →](./enunciados/08_mini_crm_inteligente.md) |
 
-### **🎯 Proyectos Recomendados por Perfil:**
-
-| **Perfil** | **Proyectos Recomendados** | **¿Por qué?** |
-|------------|---------------------------|---------------|
-| **🐣 Principiante** | #2, #5 | Menor complejidad técnica, enfoque en IA |
-| **💼 Desarrollador** | #1, #4, #6 | Balance perfecto entre IA y desarrollo |
-| **🏗️ Arquitecto** | #3, #7, #8 | Requieren diseño de sistemas complejos |
-| **🚀 Full-stack** | #1, #3, #8 | Integración completa frontend-backend-IA |
 
 ---
 
