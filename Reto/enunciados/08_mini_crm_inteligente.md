@@ -556,7 +556,3 @@ Para obtener la máxima puntuación, considera implementar:
 ```
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐⭐ (Intermedio)  
-**Tiempo Estimado**: 25-30 horas  
-**Ideal para**: Estudiantes interesados en sales automation, customer analytics y business intelligence
