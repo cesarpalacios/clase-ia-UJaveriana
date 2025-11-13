@@ -408,7 +408,3 @@ Para obtener la máxima puntuación, considera implementar:
 - Violaciones de reglas de negocio
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐⭐⭐ (Avanzado)  
-**Tiempo Estimado**: 35-40 horas  
-**Ideal para**: Estudiantes interesados en seguridad, monitoring y análisis de datos en tiempo real

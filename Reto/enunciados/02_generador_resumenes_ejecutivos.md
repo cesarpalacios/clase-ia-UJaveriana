@@ -224,7 +224,3 @@ Para obtener la máxima puntuación, considera implementar:
 - **Profesionalismo**: ¿Formato apropiado para ejecutivos?
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐ (Básico-Intermedio)  
-**Tiempo Estimado**: 20-25 horas  
-**Ideal para**: Estudiantes interesados en procesamiento de documentos y NLP

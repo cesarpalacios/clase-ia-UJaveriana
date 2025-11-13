@@ -474,7 +474,3 @@ Para obtener la máxima puntuación, considera implementar:
 - Adopción en equipo: >80%
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐⭐ (Intermedio)  
-**Tiempo Estimado**: 30-35 horas  
-**Ideal para**: Estudiantes interesados en automatización de workflows y integración de APIs

@@ -154,7 +154,3 @@ Para obtener la máxima puntuación, considera implementar:
 - **Personalización**: Respuestas adaptadas al nivel técnico del usuario
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐⭐ (Intermedio)  
-**Tiempo Estimado**: 25-30 horas  
-**Ideal para**: Estudiantes interesados en chatbots y automatización de soporte

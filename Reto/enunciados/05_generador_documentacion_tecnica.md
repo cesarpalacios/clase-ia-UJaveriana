@@ -491,7 +491,3 @@ Para obtener la máxima puntuación, considera implementar:
 - Best practices
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐ (Básico-Intermedio)  
-**Tiempo Estimado**: 20-25 horas  
-**Ideal para**: Estudiantes interesados en documentación automática y parsing de código

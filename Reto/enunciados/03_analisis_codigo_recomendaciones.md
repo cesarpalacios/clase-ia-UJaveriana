@@ -305,7 +305,3 @@ Para obtener la máxima puntuación, considera implementar:
 ```
 
 ---
-
-**Nivel de Dificultad**: ⭐⭐⭐⭐ (Avanzado)  
-**Tiempo Estimado**: 35-40 horas  
-**Ideal para**: Estudiantes con experiencia en desarrollo y interés en calidad de código
