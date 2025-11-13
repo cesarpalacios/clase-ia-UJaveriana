@@ -195,49 +195,17 @@ curl -H "Authorization: Bearer tu_token" \
 
 ---
 
-## 📞 **Soporte y Contacto**
-
-### **🤝 Canales de Ayuda**
-- **📧 Email:** [instructor@curso-ia.com](mailto:instructor@curso-ia.com)
-- **💬 Slack:** Canal #reto-final
-- **🕒 Office Hours:** Lunes y Miércoles 2-4 PM
-- **💻 GitHub Discussions:** Para preguntas técnicas
-
 ### **❓ FAQ Rápidas**
-- **¿Puedo cambiar de proyecto?** Sí, hasta la segunda semana
+- **¿Puedo cambiar de proyecto?** Sí, el objetivo es presentarlo el día de la clase
 - **¿Hay grupos?** No, es proyecto individual
 - **¿Hay extensiones?** Solo por causas justificadas
 - **¿Qué pasa si no funciona en la demo?** Se evalúa según lo que se muestre
 - **¿Puedo usar otras tecnologías?** Sí, mientras uses las obligatorias
-- **¿Necesito usar todas las funcionalidades de n8n?** No, usa las que necesites
+- **¿Necesito usar todas las funcionalidades de n8n?** Si, usa las que necesites
 
 ---
 
 ## ⚡ **Estrategia Express - Tiempo Limitado**
-
-### **🚀 Plan de Acción Rápida (6-10 horas total):**
-
-#### **⏰ Hora 1: Setup y Planificación**
-- [ ] Fork del repositorio y configuración inicial
-- [ ] Elegir proyecto **simple** (#2 Resúmenes o #5 Documentación)
-- [ ] Leer enunciado específico en carpeta `enunciados/`
-- [ ] Configurar Docker + n8n localmente
-
-#### **⏰ Horas 2-6: Desarrollo MVP**
-- [ ] Crear workflow básico en n8n
-- [ ] Configurar GitHub Models (1 modelo simple)
-- [ ] Implementar **UNA** funcionalidad core
-- [ ] Testear que funciona end-to-end
-
-#### **⏰ Hora 7-8: Documentación Mínima**
-- [ ] README con descripción del proyecto
-- [ ] Instrucciones de instalación (copy-paste)
-- [ ] Ejemplo de uso con screenshots
-
-#### **⏰ Hora 9: Preparación Demo**
-- [ ] Practicar demo de 5 minutos
-- [ ] Preparar datos de ejemplo
-- [ ] Screenshots como backup
 
 ### **💡 Recomendaciones para Tiempo Limitado:**
 1. **🎯 ENFÓCATE EN LO MÍNIMO:** Una funcionalidad que funcione > muchas que fallen
@@ -245,19 +213,6 @@ curl -H "Authorization: Bearer tu_token" \
 3. **� NO te compliques:** Sin bases de datos complejas, sin interfaces elaboradas
 4. **🤖 GitHub Models simple:** Un prompt básico es suficiente
 5. **📝 Documenta mientras desarrollas:** No lo dejes para el final
-
-### **🎯 Proyectos Recomendados para Tiempo Limitado:**
-
-| **Proyecto** | **Tiempo Estimado** | **¿Por qué es rápido?** |
-|--------------|---------------------|-------------------------|
-| **#2 - Generador de Resúmenes** | 4-6 horas | Input simple, output texto, workflow directo |
-| **#5 - Generador de Documentación** | 5-7 horas | Templates existentes, proceso lineal |
-| **#1 - Asistente Soporte** | 6-8 horas | Si usas Telegram (más simple que Slack) |
-
-### **🚫 EVITA estos proyectos por tiempo:**
-- ❌ **#3 - Análisis de Código** (muy complejo)
-- ❌ **#7 - Detector de Riesgos** (requiere mucha configuración)
-- ❌ **#8 - Mini CRM** (base de datos + UI compleja)
 
 ### **🎤 Consejos para Demo Express:**
 1. **⏱️ 5 minutos máximo:** Ve directo al grano
@@ -275,23 +230,6 @@ curl -H "Authorization: Bearer tu_token" \
 
 ---
 
-## 🏁 **Checklist Express Pre-Entrega**
-
-### **✅ Checklist Mínimo (para aprobar):**
-- [ ] **Docker funciona:** `docker-compose up` levanta todo
-- [ ] **n8n workflow:** Al menos un workflow básico funcionando
-- [ ] **GitHub Models:** Una llamada a API funcionando
-- [ ] **README básico:** Descripción + instrucciones de uso
-- [ ] **Demo preparada:** 5 minutos, una funcionalidad
-- [ ] **Repository público:** En GitHub, código disponible
-
-### **⭐ Checklist Plus (para destacar):**
-- [ ] ✅ **Todo lo anterior +**
-- [ ] **Documentación clara:** Diagramas simples, ejemplos
-- [ ] **Múltiples funcionalidades:** 2-3 características trabajando
-- [ ] **Manejo de errores:** Validaciones básicas
-- [ ] **Demo sólida:** 8-10 minutos, explicación técnica
-
 ### **🎯 Recordatorio Final:**
 > **"Funciona > Bonito"**  
 > Es mejor tener una funcionalidad simple que funcione al 100% que tres funcionalidades complejas que fallen.
@@ -299,7 +237,7 @@ curl -H "Authorization: Bearer tu_token" \
 ---
 
 **⚡ DEADLINE:** Próxima clase  
-**🎯 Última actualización:** 11 de noviembre de 2025  
+**🎯 Última actualización:** 13 de noviembre de 2025  
 **📝 Versión:** 2.1 - Express Edition  
 **🏆 Curso:** Tecnologías Emergentes - Experto en IA para Desarrolladores
 
