@@ -2,7 +2,7 @@
 
 ## � **¿Qué es este reto?**
 
-Proyecto final donde los estudiantes deben crear una solución de **IA + Automatización** usando **Docker**, **n8n** y **GitHub Models**.
+Proyecto final donde deben crear una solución de **IA + Automatización** usando **Docker**, **n8n** y **GitHub Models**.
 
 ### **🎯 Objetivo Principal**
 Demostrar dominio en el desarrollo de soluciones inteligentes que integren:
@@ -15,31 +15,11 @@ Demostrar dominio en el desarrollo de soluciones inteligentes que integren:
 
 ## ⏰ **Cronograma y Estructura**
 
-### **⚡ Tiempo Total:** Para entregar en la próxima clase
-
-| **Actividad** | **Tiempo Estimado** | **Entregables** |
-|---------------|---------------------|-----------------|
-| **📋 Planificación** | 30-60 minutos | Proyecto elegido, plan básico |
-| **💻 Desarrollo MVP** | 4-8 horas | Funcionalidad básica funcionando |
-| **📝 Documentación** | 1-2 horas | README con instrucciones claras |
-| **🎤 Preparación Demo** | 30 minutos | Demo de 5-10 minutos preparada |
-
 ### **🎤 Presentación Final**
 - **Duración:** 5-10 minutos por estudiante
 - **Formato:** Demo en vivo + explicación técnica básica
 - **Qué mostrar:** Funcionalidad core trabajando end-to-end
 - **Enfoque:** MVP (Producto Mínimo Viable) que funcione
-
-### **⚡ Estrategia Rápida para la Entrega:**
-> **💡 Tip Clave:** Enfócate en hacer funcionar lo básico, no en perfeccionar todo
-
-1. **🎯 Elige el proyecto más simple** (recomendados: #2 o #5)
-2. **🚀 Usa templates existentes** y ejemplos de la carpeta `enunciados/`
-3. **📋 MVP primero:** Una funcionalidad básica que funcione
-4. **📝 Documentación mínima:** Solo lo esencial para ejecutar
-5. **🎤 Demo simple:** Muestra que funciona, no que es perfecto
-
----
 
 ## 🛠️ **Tecnologías Obligatorias**
 
